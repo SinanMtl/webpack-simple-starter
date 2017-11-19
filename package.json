@@ -58,8 +58,6 @@
   "dependencies": {
     "bootstrap": "^4.0.0-beta.2",
     "jquery": "^3.2.1",
-    "lodash": "^4.17.4",
-    "object.observe": "^0.2.6",
     "popper.js": "^1.12.9"
   },
   "engines": {
