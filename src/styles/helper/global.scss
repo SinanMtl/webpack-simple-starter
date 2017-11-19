@@ -1,0 +1,32 @@
+body {
+  // color: $c-text;
+  // background-color: $c-bg;
+  // letter-spacing: -0.3px;
+}
+
+// a, button {
+//   cursor: pointer;
+//   transition: $transition;
+// }
+
+// a {
+//   color: inherit;
+// }
+
+svg.icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+img, svg {
+  user-select: none;
+}
+
+.border-bottom {
+  border-bottom: 1px solid lighten(#bababa, 5%);
+}

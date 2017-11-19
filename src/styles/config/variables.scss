@@ -1,0 +1,44 @@
+// GLOBAL
+$transition: 150ms;
+$transition-slow: 320ms;
+$finger-size: 48px;
+$border-radius: 4px;
+
+// COLORS
+$default: #f7e832;
+$c-heading-darken: #323231;
+$c-heading-dark: #444444;
+$c-heading-gray: #6a6a6a;
+$c-heading-gray-light: #bababa;
+$c-error: #ff4444;
+$c-success: #5ddb9f;
+$c-info: #62e3f5;
+$c-bg: #fcfcfc;
+$c-text: $c-heading-gray;
+
+// TYPOGRAPHY
+$flh-normal: 1.3;
+$fw-light: 200;
+$fw-normal: normal;
+$fw-medium: 500;
+$fw-bold: bold;
+
+/// BOOTSTRAP CUSTOMIZED VARIABLES
+$theme-colors: () !default;
+$theme-colors: map-merge((
+  "default":    $default
+), $theme-colors);
+
+
+$custom-file-text: (
+  placeholder: (
+    en: "Choose file...",
+    es: "Seleccionar archivo...",
+    tr: "Dosya seç...",
+  ),
+  button-label: (
+    en: "Browse",
+    es: "Navegar",
+    tr: "Gözat"
+  )
+);

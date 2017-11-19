@@ -1,0 +1,83 @@
+/*
+  OSWALD FONT FAMILY
+*/
+@font-face {
+  font-family: 'Oswald';
+  src: url('/static/fonts/oswald-light.eot');
+  src: url('/static/fonts/oswald-light.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/oswald-light.woff2') format('woff2'),
+  url('/static/fonts/oswald-light.woff') format('woff'),
+  url('/static/fonts/oswald-light.svg#oswaldlight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('/static/fonts/oswald-regular.eot');
+  src: url('/static/fonts/oswald-regular.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/oswald-regular.woff2') format('woff2'),
+  url('/static/fonts/oswald-regular.woff') format('woff'),
+  url('/static/fonts/oswald-regular.svg#oswaldregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url('/static/fonts/oswald-bold.eot');
+  src: url('/static/fonts/oswald-bold.eot?#iefix') format('embedded-opentype'),
+        url('/static/fonts/oswald-bold.woff2') format('woff2'),
+        url('/static/fonts/oswald-bold.woff') format('woff'),
+        url('/static/fonts/oswald-bold.svg#oswaldbold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+/*
+  UBUNTU FONT FAMILY
+*/
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/static/fonts/ubuntu-light.eot');
+  src: url('/static/fonts/ubuntu-light.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/ubuntu-light.woff2') format('woff2'),
+       url('/static/fonts/ubuntu-light.woff') format('woff'),
+       url('/static/fonts/ubuntu-light.svg#ubuntulight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/static/fonts/ubuntu-regular.eot');
+  src: url('/static/fonts/ubuntu-regular.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/ubuntu-regular.woff2') format('woff2'),
+       url('/static/fonts/ubuntu-regular.woff') format('woff'),
+       url('/static/fonts/ubuntu-regular.svg#ubunturegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/static/fonts/ubuntu-medium.eot');
+  src: url('/static/fonts/ubuntu-medium.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/ubuntu-medium.woff2') format('woff2'),
+       url('/static/fonts/ubuntu-medium.woff') format('woff'),
+       url('/static/fonts/ubuntu-medium.svg#ubuntumedium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ubuntu';
+  src: url('/static/fonts/ubuntu-bold.eot');
+  src: url('/static/fonts/ubuntu-bold.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/ubuntu-bold.woff2') format('woff2'),
+       url('/static/fonts/ubuntu-bold.woff') format('woff'),
+       url('/static/fonts/ubuntu-bold.svg#ubuntubold') format('svg');
+  font-weight: 700;
+  font-style: normal;
+}

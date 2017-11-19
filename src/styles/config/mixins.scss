@@ -1,0 +1,64 @@
+/*
+  // Example gradient
+  .body{
+    @include background-gradient(#fff14d, #82f8c3, vertical);
+  }
+*/
+
+@mixin background-gradient($firstColor, $lastColor, $orientation) {
+  $dir: (
+    one: 'left,',
+    two: 'to right,'
+  );
+
+  $type: 'linear';
+
+  @if ($orientation == 'vertical') {
+    $dir: (
+      one: 'top,',
+      two: 'to bottom,'
+    );
+  } @else if ($orientation == 'radial') {
+    $dir: (
+      one: 'center, ellipse cover,',
+      two: 'ellipse at center,'
+    );
+    $type: 'radial';
+  } @else if ($orientation == 'diagonal-bottom') {
+    $dir: (
+      one: '-45deg,',
+      two: '135deg,'
+    );
+  } @else if ($orientation == 'diagonal-top') {
+    $dir: (
+      one: '45deg,',
+      two: '45deg,'
+    );
+  }
+
+  background: $firstColor;
+  background: -moz-#{$type}-gradient(#{map-get($dir, 'one')} $firstColor 0%, $lastColor 100%);
+  background: -webkit-#{$type}-gradient(#{map-get($dir, 'one')} $firstColor 0%, $lastColor 100%);
+  background: #{$type}-gradient(#{map-get($dir, 'two')} $firstColor 0%, $lastColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{firstColor}', endColorstr='#{$lastColor}}', GradientType=1);
+}
+
+// Padding and margin util
+.u{
+	@each $prefix, $type in (pd: padding, mr: margin) {
+		&-#{$prefix}{
+			@each $dir in top, right, bottom, left {
+				@each $val in 0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50 {
+					&-#{$val} {
+						#{$type}: #{$val}px;
+					}
+					&-#{$dir} {
+						&-#{$val} {
+							#{$type}-#{$dir}: #{$val}px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

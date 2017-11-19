@@ -1,0 +1,315 @@
+extends ../layouts/pages
+block append head
+	block title
+		- var title='Styleguide'; // Page title
+
+block content
+	.container.u-pd-top-20
+		.col-sm-12.mx-auto
+			h1 STYLEGUIDE
+			.block
+				h4.border-bottom COLORS
+				.row.u-pd-top-20
+					each color, key in {default: "#F7E832", primary: "#007bff", secondary: "#8f99ac", success: "#28a745", danger: "#dc3545", warning: "#ffc107", info: "#17a2b8", light: "#f8f9fa", dark: "#343a40"}
+						-var firstLetter = key[0].toUpperCase()
+						-var name = firstLetter + key.slice(1)
+						.color-wrapper.col-xl-2.col-lg-3.col-md-6.col-sm-6
+							.color-box
+								.swatch(class=key)
+								.title=name
+								.hex-value=color
+
+			.contentBox
+				h4.border-bottom HEADINGS
+				.table-responsive
+					table.table.table-hover.va-middle.u-mr-top-20
+						thead
+							tr
+								th TYPE
+								th EXAMPLE
+								th FONT
+								th.text-center FONT SIZE
+								th.text-center LINE HEIGHT
+						tbody
+							tr
+								td Heading 1
+								td #[h1 Heading]
+								td Oswald
+								td.text-center 3rem
+								td.text-center 1.2
+							tr
+								td Heading 2
+								td #[h2 Heading]
+								td Oswald
+								td.text-center 2.5rem
+								td.text-center 1.2
+							tr
+								td Heading 3
+								td #[h3 Heading]
+								td Oswald
+								td.text-center 1.75rem
+								td.text-center 1.2
+							tr
+								td Heading 4
+								td #[h4 Heading]
+								td Oswald
+								td.text-center 1.5rem
+								td.text-center 1.2
+							tr
+								td Heading 5
+								td #[h5 Heading]
+								td Oswald
+								td.text-center 1.25rem
+								td.text-center 1.2
+							tr
+								td Heading 6
+								td #[h6 Heading]
+								td Oswald
+								td.text-center 1rem
+								td.text-center 1.2
+
+				.block
+					h4.border-bottom HEADING WITH SUBTITLE
+					h1 LOREM IPSUM DOLOR
+					h5.subtitle CONSECTETUR ADIPISICING ELIT
+			
+			.contentBox
+				h4.border-bottom PARAGRAPH
+				h1 LOREM IPSUM
+				p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur hic odit, asperiores soluta? Minus quidem reiciendis inventore, hic nostrum exercitationem, maxime consectetur ut eveniet ducimus reprehenderit iure incidunt fuga culpa.
+			
+			.contentBox
+				h4.border-bottom BUTTONS
+				-var btnList = {default: 'DEFAULT', primary: 'PRIMARY', secondary: 'SECONDARY', success: 'SUCCESS', danger: 'DANGER', warning: 'WARNING', info: 'INFO', light: 'LIGHT', dark: 'DARK', link: 'LINK'}
+				.block
+					h5 SMALL
+					.row.u-pd-top-10
+						each val, index in btnList
+							.col-sm-4.col-md-3.col-lg-2
+								button.btn.btn-sm.btn-block.u-mr-bottom-10(class="btn-"+index, type="button")=val
+					.row.u-pd-top-10
+						each val, index in btnList
+							.col-sm-4.col-md-3.col-lg-2
+								button.btn.btn-sm.btn-block.u-mr-bottom-10(class="btn-outline-"+index, type="button")=val
+				.block
+					h5 NORMAL
+					.row.u-pd-top-10
+						each val, index in btnList
+							.col-sm-4.col-md-3.col-lg-2
+								button.btn.btn-block.u-mr-bottom-10(class="btn-"+index, type="button")=val
+					.row.u-pd-top-10
+						each val, index in btnList
+							.col-sm-4.col-md-3.col-lg-2
+								button.btn.btn-block.u-mr-bottom-10(class="btn-outline-"+index, type="button")=val
+				.block
+					h5 LARGE
+					.row.u-pd-top-10
+						each val, index in btnList
+							.col-sm-4.col-md-3.col-lg-2
+								button.btn.btn-lg.btn-block.u-mr-bottom-10(class="btn-"+index, type="button")=val
+					.row.u-pd-top-10
+						each val, index in btnList
+							.col-sm-4.col-md-3.col-lg-2
+								button.btn.btn-lg.btn-block.u-mr-bottom-10(class="btn-outline-"+index, type="button")=val
+			.contentBox
+				h4.border-bottom INPUT & ELEMENTS
+				.block
+					h4.u-pd-bottom-20 INPUTS
+					.row
+						.col-sm-6
+							.form-group
+								label(for="textField1") Text Field
+								input.form-control#textField1(type="text")
+							.form-group
+								label(for="textField2") Text Field
+								input.form-control#textField2(type="text", placeholder="With placeholder")
+							.form-group
+								label(for="password1") Password
+								input.form-control#password1(type="password", placeholder="Enter password")
+							.form-group
+								label(for="number1") Number
+								input.form-control#number1(type="number")
+							.form-group
+								label(for="email1") Email
+								input.form-control#email1(type="email")
+							.form-group
+								label(for="file1") File
+								input.form-control#file1(type="file")
+							.form-group
+								label(for="hintField1") Text Field
+								input.form-control#hintField1(type="text", aria-describedby="hintHelp", placeholder="With hint")
+								small#hintHelp.form-text.text-muted We'll never share your email with anyone else.
+							h5.u-mr-top-20 CHEKCBOX
+							.form-check
+								label.form-check-label
+									input.form-check-input(type="checkbox", value="")
+									|Option one is this and that&mdash;be sure to include why it's great
+							.form-check.disabled
+								label.form-check-label
+									input.form-check-input(type="checkbox", value="", disabled)
+									|Option two is disabled
+							h5.u-mr-top-20 RADIO
+							.form-check
+								label.form-check-label
+									input.form-check-input(type="radio", name="exampleRadios", value="option1", checked)
+									|Option one is this and that&mdash;be sure to include why it's great
+							.form-check
+								label.form-check-label
+									input.form-check-input(type="radio", name="exampleRadios", value="option2")
+									|Option two can be something else and selecting it will deselect option one
+							.form-check.disabled
+								label.form-check-label
+									input.form-check-input(type="radio", name="exampleRadios", value="option3", disabled)
+									|Option three is disabled
+							h5.u-mr-top-20 INLINE
+							.form-check.form-check-inline
+								label.form-check-label
+									input.form-check-input#inlineCheckbox1(type="checkbox", value="option1", checked)
+									|1
+							.form-check.form-check-inline
+								label.form-check-label
+									input.form-check-input#inlineCheckbox2(type="checkbox", value="option2")
+									|2
+							.form-check.form-check-inline.disabled
+								label.form-check-label
+									input.form-check-input#inlineCheckbox3(type="checkbox", value="option3", disabled)
+									|3
+							.form-check.form-check-inline
+								label.form-check-label
+									input.form-check-input(type="radio", name="inlineRadio3", value="option1", checked)
+									|1
+							.form-check.form-check-inline
+								label.form-check-label
+									input.form-check-input(type="radio", name="inlineRadio3", value="option2")
+									|2
+							.form-check.form-check-inline.disabled
+								label.form-check-label
+									input.form-check-input(type="radio", name="inlineRadio3", value="option3", disabled)
+									|3
+							
+						.col-sm-6
+							.form-group
+								label(for="group1") Group Left
+								.input-group
+									span.input-group-addon#basic-addon1 @
+									input.form-control#group1(type="text", placeholder="Username", aria-describedby="basic-addon1")
+							.form-group
+								label(for="group2") Group Right
+								.input-group
+									input.form-control#group2(type="text", placeholder="Recipient's name", aria-describedby="basic-addon2")
+									span.input-group-addon#basic-addon2 @example.com
+							.form-group
+								label(for="textFieldDisabled1") Text Field
+								input.form-control#textFieldDisabled1(type="text", disabled, placeholder="Disabled")
+							.form-group
+								label(for="textFieldReadonly1") Text Field
+								input.form-control#textFieldReadonly1(type="text", readonly, placeholder="Readonly")
+							.form-group
+								label(for="group2") Group Multiple
+								.input-group
+									span.input-group-addon#basic-addon3 $
+									span.input-group-addon#basic-addon4 0.00
+									input.form-control#group2(type="text", aria-describedby="basic-addon2")
+							.form-group
+								label(for="select1") Selectbox
+								select.form-control#select1
+									option(value="1") Selection 1
+									option(value="2") Selection 2
+									option(value="3") Selection 3
+									option(value="4") Selection 4
+									option(value="5") Selection 5
+							.form-group
+								label(for="select1") Multiple Selectbox
+								select.form-control#select1(multiple)
+									option(value="1") Selection 1
+									option(value="2") Selection 2
+									option(value="3") Selection 3
+									option(value="4") Selection 4
+									option(value="5") Selection 5
+
+							.block.u-mr-top-30
+								h6 CUSTOM CHECKBOX
+								label.custom-control.custom-checkbox
+									input.custom-control-input(type="checkbox", checked)
+									span.custom-control-indicator
+									span.custom-control-description Check 1
+								label.custom-control.custom-checkbox
+									input.custom-control-input(type="checkbox")
+									span.custom-control-indicator
+									span.custom-control-description Check 2
+								label.custom-control.custom-checkbox
+									input.custom-control-input(type="checkbox", disabled)
+									span.custom-control-indicator
+									span.custom-control-description Check 3
+								
+								h6.u-mr-top-10 CUSTOM RADIO
+								label.custom-control.custom-radio
+									input.custom-control-input(type="radio", name="customRadio", checked)
+									span.custom-control-indicator
+									span.custom-control-description Radio 1
+								label.custom-control.custom-radio
+									input.custom-control-input(type="radio", name="customRadio")
+									span.custom-control-indicator
+									span.custom-control-description Radio 2
+								label.custom-control.custom-radio
+									input.custom-control-input(type="radio", name="customRadio", disabled)
+									span.custom-control-indicator
+									span.custom-control-description Radio 3
+								
+								h6.u-mr-top-10 CUSTOM SELECTBOX
+								.customized-select
+									select.custom-select
+										option(selected) Open this select menu
+										option(value="1") One
+										option(value="2") Two
+										option(value="3") Three
+								
+								h6.u-mr-top-10 CUSTOM FILE
+								label.custom-file
+									input.custom-file-input#file2(type="file")
+									span.custom-file-control
+			
+			.contentBox
+				h4.border-bottom TABS
+
+				.tab-wrapper
+					ul.nav.nav-tabs.u-mr-top-20#myTab(role="tablist")
+						li.nav-item
+							a.nav-link.active#home-tab(data-toggle="tab", href="#home", role="tab" aria-controls="home", aria-selected="true") HOME
+						li.nav-item
+							a.nav-link#profile-tab(data-toggle="tab", href="#profile", role="tab", aria-controls="profile", aria-selected="false") PROFILE
+						li.nav-item
+							a.nav-link#contact-tab(data-toggle="tab", href="#contact", role="tab", aria-controls="contact", aria-selected="false") CONTACT
+						li.nav-item
+							a.nav-link#comments-tab(data-toggle="tab", href="#comments", role="tab", aria-controls="contact", aria-selected="false") COMMENTS
+				.tab-content.u-pd-15#myTabContent
+					.tab-pane.fade.show.active#home(role="tabpanel" aria-labelledby="home-tab")
+						h3 HOME
+						p On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.
+					.tab-pane.fade#profile(role="tabpanel", aria-labelledby="profile-tab")
+						h3 PROFILE
+						p On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.
+					.tab-pane.fade#contact(role="tabpanel", aria-labelledby="contact-tab")
+						h3 CONTACT
+						p On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.
+					.tab-pane.fade#comments(role="tabpanel", aria-labelledby="comments-tab")
+						h3 COMMENTS
+						p On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish.
+			
+			.contentBox
+				h4.border-bottom PAGINATION
+
+				nav(aria-label="Page navigation example")
+					ul.pagination
+						li.page-item
+							a.page-link(href="#")
+								svg.icon #[use(xlink:href="#icon-arrow_left")]
+						li.page-item
+							a.page-link(href="#") 1
+						li.page-item
+							a.page-link(href="#") 2
+						li.page-item
+							a.page-link(href="#") 3
+						li.page-item
+							a.page-link(href="#")
+								svg.icon #[use(xlink:href="#icon-arrow_right")]

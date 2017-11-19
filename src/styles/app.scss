@@ -1,0 +1,83 @@
+@import "~bootstrap/scss/functions";
+@import "config/variables";
+@import "~bootstrap/scss/bootstrap";
+@import "config/mixins";
+@import "helper/fonts";
+@import "helper/form";
+@import "helper/anim";
+@import "helper/global";
+@import "helper/tabs";
+
+
+.subtitle{
+	margin-top: 0;
+	color: #bababa;
+}
+
+.va-middle{
+	td, th{
+		vertical-align: middle;
+	}
+}
+
+input::-webkit-file-upload-button {
+	border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 1px;
+	padding: 1px 7px 2px;
+	margin-left: -4px;
+}
+
+/// FOR STYLEGUDE PAGE
+.contentBox{
+	padding: 20px;
+	background-color: #FFF;
+	border: 1px solid lighten(#bababa, 15%);
+	border-radius: 4px;
+	margin: 20px 0;
+}
+
+.block{margin-top: 42px;}
+
+.color-box {
+	padding: 25px 20px;
+	text-align: center;
+	background: #fff;
+	margin-bottom: 30px;
+	box-shadow: 0 0 25px rgba(40,47,60,.05), 0 20px 25px rgba(40,47,60,.05), 0 3px 4px rgba(40,47,60,.05);
+
+	.swatch {
+		position: relative;
+		border-radius: 50%;
+		margin: 0 auto 15px auto;
+		width: 110px;
+		height: 110px;
+
+		@each $key, $val in (
+			"default":		$default,
+			"primary": 		$primary,
+			"secondary":  $secondary,
+			"success":    $success,
+			"info":       $info,
+			"warning":    $warning,
+			"danger":     $danger,
+			"light":      $light,
+			"dark":       $dark
+		) {
+			&.#{$key} {background-color: $val;}
+		}
+	}
+
+	.title{
+		display: inline-block;
+    width: 100%;
+    font-size: 1rem;
+	}
+	
+	.hex-value {
+		color: #8f99ac;
+		font-size: 12px;
+		text-transform: uppercase;
+	}
+}
