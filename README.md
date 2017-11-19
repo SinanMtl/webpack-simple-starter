@@ -1,5 +1,5 @@
 # Webpack Simple Starter
-A simple webpack starter without framework (Like Vue, React, Angualar, etc.)
+A simple webpack starter without framework (Like Vue, React, Angualar, etc.). This project is inspired from [**vue-cli webpack project**](https://github.com/vuejs/vue-cli#vue-build)
 
 ## Getting Started
 First, install the modules that the project needs.
