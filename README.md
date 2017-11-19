@@ -41,5 +41,5 @@ static/		# Static files (Like fonts, images)
 
 Also, this project is supporting hot reload and include **eslint**
 
-### License
+## License
 This project is under the MIT license.
