@@ -8,7 +8,6 @@
     "build": "node build/build.js"
   },
   "author": "Sinan Mutlu <sinanm17@gmail.com>",
-  "private": true,
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^7.1.6",
