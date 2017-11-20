@@ -20,8 +20,8 @@ module.exports = {
     path: config.build.assetsRoot,
     filename: '[name].js',
     publicPath: isDev
-      ? config.build.assetsPublicPath
-      : config.dev.assetsPublicPath
+      ? config.dev.assetsPublicPath
+      : config.build.assetsPublicPath
   },
   resolve: {
     extensions: ['.js', '.json'],
