@@ -28,17 +28,3 @@ $theme-colors: () !default;
 $theme-colors: map-merge((
   "default":    $default
 ), $theme-colors);
-
-
-$custom-file-text: (
-  placeholder: (
-    en: "Choose file...",
-    es: "Seleccionar archivo...",
-    tr: "Dosya seç...",
-  ),
-  button-label: (
-    en: "Browse",
-    es: "Navegar",
-    tr: "Gözat"
-  )
-);
