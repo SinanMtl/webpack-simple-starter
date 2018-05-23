@@ -1,3 +1,4 @@
+/* eslint-disable */
 var path = require('path')
 var merge = require('webpack-merge')
 var webpack = require('webpack')
@@ -73,9 +74,10 @@ module.exports = {
   },
   plugins: [
     ...utils.pageFile(isDev),
+    new webpack.LoaderOptionsPlugin({ options: {} }),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash].css')
+      filename: utils.assetsPath('css/[name].[hash].css')
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
