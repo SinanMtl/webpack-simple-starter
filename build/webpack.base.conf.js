@@ -74,7 +74,6 @@ module.exports = {
   },
   plugins: [
     ...utils.pageFile(isDev),
-    new webpack.LoaderOptionsPlugin({ options: {} }),
     // extract css into its own file
     new ExtractTextPlugin({
       filename: utils.assetsPath('css/[name].[hash].css')
