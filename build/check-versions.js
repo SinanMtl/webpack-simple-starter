@@ -1,4 +1,3 @@
-/* eslint-disable */
 var chalk = require('chalk')
 var semver = require('semver')
 var packageConfig = require('../package.json')
@@ -12,7 +11,7 @@ var versionRequirements = [
     name: 'node',
     currentVersion: semver.clean(process.version),
     versionRequirement: packageConfig.engines.node
-  },
+  }
 ]
 
 if (shell.which('npm')) {

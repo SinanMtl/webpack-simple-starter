@@ -1,4 +1,3 @@
-/* eslint-disable */
 var path = require('path')
 var merge = require('webpack-merge')
 var webpack = require('webpack')
