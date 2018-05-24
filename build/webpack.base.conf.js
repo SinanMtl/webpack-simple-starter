@@ -24,11 +24,15 @@ module.exports = {
       ? config.dev.assetsPublicPath
       : config.build.assetsPublicPath
   },
+  mode: 'development',  
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
       '@': resolve('src')
     }
+  },
+  performance: {
+    hints: false
   },
   module: {
     rules: [
