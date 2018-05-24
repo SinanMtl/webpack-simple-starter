@@ -7,11 +7,15 @@ var utils = require('./utils')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
 var isDev = process.env.NODE_ENV === 'development'
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 module.exports = {
   entry: {
@@ -24,7 +28,7 @@ module.exports = {
       ? config.dev.assetsPublicPath
       : config.build.assetsPublicPath
   },
-  mode: 'development',  
+  mode: process.env.NODE_ENV,  
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
