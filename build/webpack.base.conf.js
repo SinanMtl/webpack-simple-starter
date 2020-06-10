@@ -6,11 +6,15 @@ var utils = require('./utils')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 
-function resolve (dir) {
-  return path.join(__dirname, '..', dir)
+if (!process.env.NODE_ENV) {
+  process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }
 
 var isDev = process.env.NODE_ENV === 'development'
+
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
 
 module.exports = {
   entry: {
@@ -23,11 +27,15 @@ module.exports = {
       ? config.dev.assetsPublicPath
       : config.build.assetsPublicPath
   },
+  mode: process.env.NODE_ENV,  
   resolve: {
     extensions: ['.js', '.json'],
     alias: {
       '@': resolve('src')
     }
+  },
+  performance: {
+    hints: false
   },
   module: {
     rules: [
@@ -75,7 +83,7 @@ module.exports = {
     ...utils.pageFile(isDev),
     // extract css into its own file
     new ExtractTextPlugin({
-      filename: utils.assetsPath('css/[name].[contenthash].css')
+      filename: utils.assetsPath('css/[name].[hash].css')
     }),
     // Compress extracted CSS. We are using this plugin so that possible
     // duplicated CSS from different components can be deduped.
